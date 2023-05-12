@@ -11,17 +11,34 @@
    <header>
        <h1 align="center" style="color: darkgreen">School Information System</h1>
    </header>
-   <form align="center" action="dashboard.html" method="post">
+   <script>
+       var myMap = new Map();
+       myMap.set("Nandan9911", "test123");
+       myMap.set("Hitesh", "test1234");
+       myMap.set("Ram", "test12");
+       myMap.set("Chandan", "test1");
+       myMap.set("Govind", "test");
+   </script>
+   <form name="logn" align="center" action="dashboard.html" method="post" onsubmit="(function(){
+
+       const i = document.getElementById('uname').value;
+       const k = document.getElementById('psw').value;
+       const j = myMap.get(i);
+       if(j==null)
+          alert('Please register first !!!');
+       else if(k!=j)
+          alert('Incorrect password !!!');
+       })()">
     <div>
        <label for="uname"><b>Username</b></label>
-       <input type="text" placeholder="Enter Username" name="uname" required="true">
+       <input type="text" placeholder="Enter Username" id="uname" required="true">
     </div>
     <div>
        <label for="psw"><b>Password</b></label>
-       <input type="password" placeholder="Enter Password" name="psw" required="true">
+       <input type="password" placeholder="Enter Password" id="psw" required="true">
     <div>
     <div>
-       <button type="submit">Login</button><button type="submit">Register</button>
+       <button type="submit">Login</button>
     </div>
    </form>
 
