@@ -5,21 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Information System</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+      var myMap=null;
+    </script>
+    <script>
+    $( function() {
+    $( "#tabs" ).tabs();
+  } );
+    </script>
 </head>
 <body>
     <link rel="stylesheet" href="styles.css">
    <header>
        <h1 align="center" style="color: darkgreen">School Information System</h1>
    </header>
-   <script>
-       var myMap = new Map();
-       myMap.set("Nandan9911", "test123");
-       myMap.set("Hitesh", "test1234");
-       myMap.set("Ram", "test12");
-       myMap.set("Chandan", "test1");
-       myMap.set("Govind", "test");
-   </script>
-   <form name="logn" align="center" action="dashboard.html" method="post" onsubmit="(function(){
+   
+<div id="tabs">
+   <ul>
+     <li><a href="#tabs-1"><h1>Login</h1></a></li>
+     <li><a href="#tabs-2"><h1>Register</h1></a></li>
+   </ul>
+<div id="tabs-1" style="text-align:center">
+   <form name="logn" onsubmit="(function(){
+if(myMap==null)
+{
+   alert('Please register first !!!');
+}
+else{
 
        const i = document.getElementById('uname').value;
        const k = document.getElementById('psw').value;
@@ -28,6 +42,9 @@
           alert('Please register first !!!');
        else if(k!=j)
           alert('Incorrect password !!!');
+       else
+          document.open('dashboard.html');
+}
        })()">
     <div>
        <label for="uname"><b>Username</b></label>
@@ -36,11 +53,40 @@
     <div>
        <label for="psw"><b>Password</b></label>
        <input type="password" placeholder="Enter Password" id="psw" required="true">
-    <div>
+    </div>
     <div>
        <button type="submit">Login</button>
     </div>
    </form>
+</div>
+<div id="tabs-2" style="text-align:center">
+   <form name="register" onsubmit="(function(){
+
+       if(myMap==null)
+          {
+            myMap = new Map();
+            const m = document.getElementById('reguser').value;
+            const n = document.getElementById('regpass').value;
+         }
+       const i = document.getElementById('uname').value;
+       const k = document.getElementById('psw').value;
+       myMap.set(i,k);
+       alert('Registered successfully !!!');
+       
+       })()">
+    <div>
+       <label for="reguser"><b>Username</b></label>
+       <input type="text" placeholder="Enter Username" id="reguser" required="true">
+    </div>
+    <div>
+       <label for="regpass"><b>Password</b></label>
+       <input type="password" placeholder="Enter Password" id="regpass" required="true">
+    <div>
+    <div>
+       <button type="submit">Register</button>
+    </div>
+   </form>
+</div>
 
     
 </body>

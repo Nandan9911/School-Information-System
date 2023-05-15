@@ -20,4 +20,26 @@ body {
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+#tabs-2 {
+  display: table;
+  width: 100%;
+}
+
+#register {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#tabs-1 {
+  display: table;
+  width: 100%;
+}
+
+#logn {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
 }/*# sourceMappingURL=styles.css.map */
